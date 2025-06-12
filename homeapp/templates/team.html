@@ -1,0 +1,76 @@
+{% extends 'base_home.html' %}
+{% load static %}
+{% block body %}
+    <!-- Header  -->
+    <div class="jumbotron2 page-header-4 position-relative overlay-bottom" style="margin-bottom: 10px;" >
+        <h1 class="text-white display-4 text-center py-3">Testimonios</h1>
+    </div>
+    <!-- Team Start -->
+    <div class="container-fluid py-3">
+        <div class="container py-3">
+            <div class="section-title text-center position-relative mb-5">
+                <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Docentes</h6>
+                <h1 class="display-4">Conozca a nuestros instructores</h1>
+            </div>
+            <div class="owl-carousel team-carousel position-relative" style="padding: 0 30px;">
+                <div class="team-item">
+                    <img class="img-fluid w-100" src={% static "img/team-1.jpg" %} alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Nombre Profesor</h5>
+                        <p class="mb-2">Diseño y desarrollo web</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-item">
+                    <img class="img-fluid w-100" src={% static "img/team-2.jpg" %} alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Nombre Profesor</h5>
+                        <p class="mb-2">Android & iOS</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-item">
+                    <img class="img-fluid w-100" src={% static "img/team-3.jpg" %} alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Nombre Profesor</h5>
+                        <p class="mb-2">Diseño UX/UI</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-item">
+                    <img class="img-fluid w-100" src={% static "img/team-4.jpg" %} alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Nombre Profesor</h5>
+                        <p class="mb-2">REACT JS</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team -->
+{% endblock %}

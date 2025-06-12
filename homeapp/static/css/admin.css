@@ -1,0 +1,32 @@
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    padding-top: 20px;
+    background-color: #9ba3ab;
+    transition: width 0.3s ease;
+    text-decoration-color: aliceblue;
+
+}
+
+.sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+.sidebar .descrption {
+    color: #fff;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #7a8b92;
+}
