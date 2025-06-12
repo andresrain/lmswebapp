@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include # 'include' es necesario para agregar rutas de apps
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    #path('admin/', admin.site.urls),
     path('', include('homeapp.urls')),            # Ruta para la página de inicio
     path('login/', include('loginapp.urls')),     # Ruta para el login
     path('dashboard/', include('dashapp.urls')),  # Ruta para el dashboard

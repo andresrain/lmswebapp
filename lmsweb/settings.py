@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
      # lms aplicaciones
-    'dashapp',
-    'loginapp',
     'homeapp',
+    'loginapp',
+    'dashapp',
 ]
 
 MIDDLEWARE = [

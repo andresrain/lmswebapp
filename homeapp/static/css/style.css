@@ -9802,16 +9802,16 @@ h6,
   height: 500px;
 }
 .jumbotron2 {
-  background: linear-gradient(rgba(36, 120, 235, 0.5), rgba(40, 120, 235, 0.5)), url(../img/page-header-3.jpg), no-repeat center center;
+  background: linear-gradient(rgba(36, 120, 235, 0.5), rgba(40, 120, 235, 0.5)), url(../img/page-header-3.jpg), no-repeat center 20%/100% 160%;
   background-size: cover;
-  height: 100px;
+  height: 200px;
 }
 
 
 .jumbotron.page-header {
-  background: linear-gradient(rgba(36, 120, 235, 0.5), rgba(40, 120, 235, 0.5)), url(../img/page-header.jpg), no-repeat center center;
+  background: linear-gradient(rgba(36, 120, 235, 0.5), rgba(40, 120, 235, 0.5)), url(../img/page-header.jpg), no-repeat center 20%/100% 160%;
   background-size: cover;
-  height: 300px;
+  height: 200px;
 }
 .jumbotron.page-head2{
   background: linear-gradient(rgba(36, 120, 235, 0.5), rgba(40, 120, 235, 0.5)), url(../img/page-header-2.jpg), no-repeat center center;
@@ -9819,9 +9819,9 @@ h6,
   height: 300px;
 }
 .jumbotron.page-header-3{
-  background: linear-gradient(rgba(36, 120, 235, 0.5), rgba(40, 120, 235, 0.5)), url(../img/contacto-header.jpg), no-repeat center center;
+  height: 200px;
+  background: linear-gradient(rgba(36, 120, 235, 0.5), rgba(40, 120, 235, 0.5)), url(../img/contacto-header.jpg), no-repeat center 20%/100% 160%;
   background-size: cover;
-  height: 300px;
 }
 .jumbotron-fluid.page-header-4{
   background: linear-gradient(rgba(36, 120, 235, 0.9), rgba(40, 120, 235, 0.7)) url(../img/page-header-3.jpg), no-repeat center center;
