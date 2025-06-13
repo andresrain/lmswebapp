@@ -1,0 +1,30 @@
+{% extends "base_adminpanel.html" %}
+{% block title %}Estudiantes{% endblock %}
+
+{% block content %}
+<h3 class="mb-4">Estudiantes Matriculados</h3>
+<table class="table table-hover table-card bg-white p-4">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Curso</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Lucía Muñoz</td>
+            <td>Salud Ocupacional</td>
+            <td>lucia@gmail.com</td>
+            <td>+569 1234 5678</td>
+        </tr>
+        <tr>
+            <td>Marco Díaz</td>
+            <td>Conducción Segura</td>
+            <td>marco@gmail.com</td>
+            <td>+569 8765 4321</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

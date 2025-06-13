@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administrador</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+  }
+
+  #wrapper {
+    display: flex;
+  }
+
+  /* Sidebar */
+  #sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -250px;
+    transition: margin .25s ease-out;
+    background-color: #1e2a38;
+    width: 250px;
+  }
+
+  #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+
+  #sidebar-wrapper .list-group {
+    width: 250px;
+  }
+
+  #sidebar-wrapper .list-group-item {
+    background-color: transparent;
+    border: none;
+    color: #adb5bd;
+    padding: 0.75rem 1.25rem;
+  }
+
+  #sidebar-wrapper .list-group-item:hover,
+  #sidebar-wrapper .list-group-item.active {
+    background-color: #27394c;
+    color: #fff;
+  }
+
+  #sidebar-wrapper .list-group-item i {
+    margin-right: 0.5rem;
+  }
+
+  #page-content-wrapper {
+    min-width: 100vw;
+    background-color: #f8f9fa;
+  }
+
+.top-navbar .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px; /* Agrega espacio entre los elementos */
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Mantiene buena separación entre el menú hamburguesa y el título */
+}
+
+.nav-search {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Centra el buscador */
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Asegura que la imagen de usuario se mantenga a la derecha */
+    gap: 15px; /* Separa el buscador de la imagen */
+}
+
+
+  /* Ajuste del título */
+  .titulo-panel {
+    font-size: 1.8rem;
+  }
+
+  /* Content */
+  .main-content {
+    padding: 1.5rem;
+  }
+
+  /* Card Grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: transform 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-0.25rem);
+  }
+
+  /* Card Header */
+  .card-header {
+    background-color: #fff;
+    border-bottom: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  .card-body {
+    padding: 1.25rem;
+  }
+
+  .card-body h5 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-body p {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
+
+  /* Cards Info */
+  .card-info {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  }
+
+  .card-info i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-info h5 {
+    font-size: 1.25rem;
+  }
+
+  .card-info p {
+    font-size: 0.875rem;
+    color: #6c757d;
+  }
+
+  .card-icon-primary {
+    color: #ff7a59; /* Orange */
+  }
+
+  .card-icon-secondary {
+    color: #8978ff; /* Purple */
+  }
+
+  .card-icon-success {
+    color: #7ec57a; /* Green */
+  }
+
+  .card-icon-warning {
+    color: #f9be56; /* Yellow */
+  }
+
+  .card-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Responsive */
+  @media (min-width: 768px) {
+    #sidebar-wrapper {
+      margin-left: 0;
+    }
+
+    #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+      margin-left: 0;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+      margin-left: -250px !important;
+    }
+  }
+
+  </style>
+</head>
+<!-- ... Tu head y estilos quedan igual ... -->
+
+<body>
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <div class="sidebar-heading">E-Otec</div>
+      <div class="list-group list-group-flush">
+        <a href="/users/dashboard/" class="list-group-item"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+        <a href="/admin/courses/course/add/" class="list-group-item"><i class="fas fa-plus-circle"></i>Crear Nuevo Curso</a>
+        <a href="/admin/auth/user/" class="list-group-item"><i class="fas fa-users"></i>Gestionar Usuarios</a>
+        <a href="#" class="list-group-item"><i class="fas fa-coins"></i>Finanzas</a>
+        <a href="/panel/cursos/" class="list-group-item"><i class="fas fa-tasks"></i>Administrar</a>
+        <a href="#" class="list-group-item"><i class="fas fa-layer-group"></i>Ajustes</a>
+        <a href="#" class="list-group-item"><i class="fas fa-sign-out-alt"></i>Desconectar</a>
+      </div>
+    </div>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-light top-navbar">
+        <div class="container-fluid">
+          <div class="nav-left">
+            <button class="btn btn-sm btn-outline-dark" id="menu-toggle">
+              <i class="fas fa-bars"></i>
+            </button>
+            <h1 class="titulo-panel">Panel de Usuario</h1>
+          </div>
+
+          <div class="nav-search">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn btn-outline-primary" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
+          </div>
+
+          <div class="nav-right">
+            <img src="https://via.placeholder.com/40" alt="User" class="rounded-circle">
+          </div>
+        </div>
+      </nav>
+
+      <div class="main-content">
+        {% if messages %}
+          <div class="container mt-3">
+            {% for message in messages %}
+              <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">
+                {{ message }}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      document.getElementById("wrapper").classList.toggle("toggled");
+    });
+  </script>
+</body>
+
+
+</html>

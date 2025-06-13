@@ -1,0 +1,30 @@
+{% extends "base_adminpanel.html" %}
+{% block title %}Cursos{% endblock %}
+
+{% block content %}
+<h3 class="mb-4">Listado de Cursos</h3>
+<table class="table table-striped table-card bg-white p-4">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Duración</th>
+            <th>Modalidad</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Excel Avanzado</td>
+            <td>16 horas</td>
+            <td>Online</td>
+            <td><span class="badge bg-success">Activo</span></td>
+        </tr>
+        <tr>
+            <td>Manipulación de Alimentos</td>
+            <td>12 horas</td>
+            <td>Presencial</td>
+            <td><span class="badge bg-warning text-dark">Próximo</span></td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

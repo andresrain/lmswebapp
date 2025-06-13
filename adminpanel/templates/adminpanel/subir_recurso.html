@@ -1,0 +1,28 @@
+{% extends 'adminpanel/base_adminpanel.html' %}
+
+{% block content %}
+<main class="container my-5">
+    <h2 class="mb-4">Subir Recurso</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form.curso.label_tag }}
+            {{ form.curso }}
+        </div>
+        <div class="mb-3">
+            {{ form.titulo.label_tag }}
+            {{ form.titulo }}
+        </div>
+        <div class="mb-3">
+            {{ form.archivo.label_tag }}
+            {{ form.archivo }}
+        </div>
+        <div class="mb-3">
+            {{ form.enlace.label_tag }}
+            {{ form.enlace }}
+        </div>
+        <button type="submit" class="btn btn-primary">Subir</button>
+    </form>
+</main>
+{% endblock %}

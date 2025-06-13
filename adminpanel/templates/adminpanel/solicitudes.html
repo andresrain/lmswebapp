@@ -1,0 +1,26 @@
+{% extends "base_adminpanel.html" %}
+{% block title %}Solicitudes{% endblock %}
+
+{% block content %}
+<h3 class="mb-4">Solicitudes Recibidas</h3>
+<div class="table-card bg-white p-4">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Mensaje</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Fernanda López</td>
+                <td>fer@gmail.com</td>
+                <td>Quiero más información sobre cursos de logística.</td>
+                <td>13/06/2025</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
