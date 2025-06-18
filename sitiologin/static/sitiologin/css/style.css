@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* CSS Reset básico para eliminar márgenes/paddings por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Asegura que html y body ocupen toda la altura de la ventana y usen flexbox */
+html,
+body {
+    height: 100%;
+    /* ¡CLAVE para sticky footer! */
+    margin: 0;
+    /* Asegura que no haya márgenes por defecto */
+    display: flex;
+    /* ¡CLAVE para sticky footer! */
+    flex-direction: column;
+    /* ¡CLAVE para sticky footer! */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f7f9fa;
+    color: #1c1d1f;
+    line-height: 1.6;
+}
+
+/* --- Navbar Mejorado --- */
+.navbar {
+    background-color: #fff;
+    padding: 0 40px;
+    border-bottom: 1px solid #d1d7dc;
+    display: flex;
+    align-items: center;
+    height: 65px;
+    flex-wrap: wrap;
+    min-height: 65px;
+}
+
+.navbar-brand a {
+    color: #1c1d1f;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.navbar-search {
+    margin-left: 30px;
+    flex-grow: 1;
+}
+
+.navbar-search input[type="text"] {
+    padding: 8px 15px;
+    border: 1px solid #d1d7dc;
+    border-radius: 20px;
+    width: 300px;
+}
+
+.navbar-links {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links a,
+.navbar-links span {
+    color: #1c1d1f;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.navbar-links a:hover {
+    color: #5624d0;
+}
+
+.navbar-links .btn-logout,
+.navbar-links .btn-login {
+    padding: 8px 15px;
+    border: 1px solid #1c1d1f;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+.navbar-links .btn-logout:hover,
+.navbar-links .btn-login:hover {
+    background-color: #f7f9fa;
+}
+
+
+/* --- Contenedor Principal (main-container) --- */
+.main-container {
+    flex-grow: 1;
+    /* ¡CLAVE para sticky footer! */
+    max-width: 1340px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* --- Footer Mejorado (para sitiologin/base.html) --- */
+.footer {
+    background-color: #1c1d1f;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    margin-top: auto;
+    /* ¡CLAVE para sticky footer! */
+    width: 100%;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+
+/* --- Estilos para Formularios (Login) --- */
+.login-container {
+    max-width: 380px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #fff;
+    border: 1px solid #d1d7dc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #8a92a3;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background-color: #5624d0;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: #401b9c;
+}
+
+.error-message {
+    color: #a94442;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilos para elementos de la barra de navegación para usuarios logeados (si se usan en sitiologin/base.html) */
+.navbar-links>* {
+    margin-left: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1c1d1f;
+    text-decoration: none;
+}
+
+.navbar-user-greeting span {
+    /* Hereda color y fuente */
+}
+
+.btn-logout {
+    background-color: transparent;
+    border: 1px solid #1c1d1f;
+    color: #1c1d1f;
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-logout:hover {
+    background-color: #1c1d1f;
+    color: white;
+}
+
+.btn-login-link {
+    background-color: transparent;
+    border: 1px solid #1c1d1f;
+    color: #1c1d1f;
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-login-link:hover {
+    background-color: #1c1d1f;
+    color: white;
+}
