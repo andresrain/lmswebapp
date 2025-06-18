@@ -1,0 +1,53 @@
+{% extends 'sitiologin/base.html' %} {# Asumiendo que base.html está en sitiologin/templates/sitiologin/base.html #}
+{% block title %}Iniciar Sesión - MiLMS{% endblock %}
+
+{% block content %}
+  <div class="login-container">
+    <h2>Iniciar Sesión</h2>
+
+    {% if form.non_field_errors %}
+      <div class="error-message">
+        {% for error in form.non_field_errors %}
+          <p>{{ error }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <form method="post" action="{% url 'login' %}">  {# ESTA LÍNEA ES CLAVE: usa 'login' (nombre de la URL de Django) #}
+      {% csrf_token %}
+      
+      {# Renderiza los campos manualmente para aplicar tus clases CSS #}
+      <div class="form-group">
+        <label for="{{ form.username.id_for_label }}">{{ form.username.label }}:</label>
+        {{ form.username }} {# Django Forms se encarga de renderizar el input con sus atributos #}
+        {% if form.username.errors %}
+          <div class="error-message field-error">
+            {% for error in form.username.errors %}
+              <p>{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      
+      <div class="form-group">
+        <label for="{{ form.password.id_for_label }}">{{ form.password.label }}:</label>
+        {{ form.password }}
+        {% if form.password.errors %}
+          <div class="error-message field-error">
+            {% for error in form.password.errors %}
+              <p>{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      
+      <button type="submit" class="btn-submit">Iniciar Sesión</button>
+      <input type="hidden" name="next" value="{{ next }}" /> {# 'next' es manejado por la vista de login de Django #}
+    </form>
+    
+    <div style="text-align: center; margin-top: 20px;">
+      {# 'password_reset' es un nombre de URL global de django.contrib.auth.urls #}
+      <p><a href="{% url 'password_reset' %}" class="forgot-password-link">¿Has olvidado la contraseña?</a></p>
+    </div>
+  </div>
+{% endblock %}

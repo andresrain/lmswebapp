@@ -20,6 +20,6 @@ from django.urls import path, include # 'include' es necesario para agregar ruta
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('homeapp.urls')),            # Ruta para la página de inicio
-    path('login/', include('loginapp.urls')),     # Ruta para el login
+    path('login/', include('sitiologin.urls')),     # Ruta para el login
     path('dashboard/', include('dashapp.urls')),  # Ruta para el dashboard
 ]

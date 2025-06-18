@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'dashapp',
     'loginapp',
     'homeapp',
+    'sitiologin',
 ]
 
 MIDDLEWARE = [

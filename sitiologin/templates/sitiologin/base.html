@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}LMS Udemy Style{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'sitiologin/css/style.css' %}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-brand">
+            {# CAMBIA 'dashboard_usuario' AL NOMBRE CORRECTO DE TU URL DEL HOME PÚBLICO SI ES DIFERENTE #}
+            {# O si el logo siempre lleva al dashboard del usuario, está bien 'dashboard_usuario' #}
+            <a href="{% url 'home' %}">MiLMS</a>
+
+        </div>
+        <nav class="navbar-links">
+            {# <a href="#">Categorías</a> #}
+            {# <a href="#">Mis Aprendizajes</a> #}
+            {% if user.is_authenticated %}
+            <div class="navbar-search">
+            <input type="text" placeholder="Buscar cursos...">
+        </div>
+                {# Envolvemos el saludo en un div para que sea un ítem flex igual que el form #}
+                <div class="navbar-user-greeting"> 
+                    <span>Hola, {{ user.username }}!</span>
+                </div>
+                <form id="logout-form" method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn-logout">Cerrar Sesión</button>
+                </form>
+            {% else %}
+                {# Asegúrate de que el botón de login tenga una clase para estilizarlo si quieres #}
+                <a href="{% url 'login' %}" class="btn-login-link">Iniciar Sesión</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <div class="main-container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer class="footer">
+        <p>© {% now "Y" %} MiLMS. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
